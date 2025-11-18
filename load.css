@@ -1,0 +1,219 @@
+/* Basic Reset & Font Setup */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Container for all content */
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 90%;
+    z-index: 10;
+}
+
+/* Initial Text Styling */
+.initial-text {
+    font-family: 'Dancing Script', cursive;
+    color: #e91e63;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Tap Button Styling (Enhanced) */
+.tap-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.2); /* 3D effect */
+    font-weight: bold;
+}
+
+.tap-button:hover {
+    background-color: #c2185b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.5), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+.tap-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* New button for next step */
+.secondary-button {
+    margin-top: 40px;
+    background-color: #00bcd4; 
+    box-shadow: 0 8px 15px rgba(0, 188, 212, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in 7s forwards; 
+}
+.secondary-button:hover {
+    background-color: #0097a7;
+    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.5), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Hidden Message Styling */
+.hidden { display: none; opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.show { display: block; opacity: 1; transform: translateY(0); }
+.hidden-step { opacity: 0; pointer-events: none; }
+
+/* Quote and Animation Area Styles */
+.love-quote-area { margin: 20px auto 40px; padding: 20px; background: #ffebee; border-radius: 10px; border-left: 5px solid #e91e63; }
+.quote-text { font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #c2185b; margin: 0; }
+.animated-element { font-size: 3em; color: #ff4081; margin-top: 10px; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+.animate-pulse { animation: pulse 1.5s infinite ease-in-out; display: inline-block; }
+
+.greeting-text { font-family: 'Dancing Script', cursive; color: #e91e63; font-size: 2.5em; margin-top: 30px; }
+.message-body { font-size: 1.1em; line-height: 1.6; margin: 15px 0; }
+.signature { font-family: 'Dancing Script', cursive; font-size: 2em; color: #00bcd4; margin-top: 40px; }
+
+
+/* Proposal Page Styles */
+.proposal-question { font-family: 'Dancing Script', cursive; color: #c2185b; font-size: 3em; margin-bottom: 40px; }
+
+.proposal-buttons { display: flex; justify-content: center; gap: 30px; }
+
+/* YES/NO Button Styling (Enhanced) */
+.proposal-btn {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Base Shadow */
+}
+
+.proposal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.yes-btn {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+.yes-btn:hover {
+     box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.no-btn {
+    background-color: #f44336;
+    color: white;
+    transition: all 0.1s ease; /* Faster transition for the tricky move */
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Pop-up Styles */
+.hidden-popup {
+    margin-top: 30px; padding: 15px; background-color: #fff3e0; border: 2px solid #ff9800; border-radius: 10px; opacity: 0; transition: opacity 0.5s ease-in; display: none; 
+}
+.show-popup { display: block; opacity: 1; }
+.popup-text { color: #e65100; font-style: italic; font-weight: 500; margin-bottom: 15px; }
+.success-text { color: #4CAF50; font-family: 'Dancing Script', cursive; font-size: 2.5em; }
+
+/* --- Heart Animation Styles (Floating Hearts and Text Animations) --- */
+.hearts-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 5; }
+.heart { position: absolute; color: #ff6b81; font-size: 2em; animation: floatUp 6s linear infinite; opacity: 0; }
+@keyframes floatUp { 0% { transform: translateY(100vh); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px); opacity: 0; } }
+
+/* Text Animation Timings Adjusted for Longer Message */
+@keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.quote-text.animate-pop { animation: popIn 1s ease-out 0.5s forwards; opacity: 0; }
+.animated-element.animate-pulse { animation-delay: 1.5s; }
+.greeting-text.animate-pop-delayed { animation: popIn 1s ease-out 2s forwards; opacity: 0; }
+.animate-fade-in { animation: fadeIn 2s ease-in 3s forwards; opacity: 0; }
+.animate-slide-up { animation: slideUp 1s ease-out 5s forwards; opacity: 0; }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+.animate-typing { animation: typing 2s steps(40, end) 7s forwards, blink-caret 0.75s step-end infinite 9s; /* Signature starts late */ }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00bcd4; } }
+
+/* ... (Keep all existing styles for body, container, buttons, proposal, and floating hearts) ... */
+
+/* --- NEW: Love Confession Page Styles --- */
+.hidden-confession {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    padding: 20px;
+}
+.show-confession {
+    display: block;
+    opacity: 1;
+}
+
+.confession-title {
+    font-family: 'Dancing Script', cursive;
+    color: #4CAF50; /* Green for success */
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    opacity: 0;
+}
+
+.confession-text {
+    font-size: 1.2em;
+    line-height: 1.7;
+    margin: 20px 0;
+    text-align: justify;
+    opacity: 0;
+}
+
+.confession-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: #00bcd4;
+    margin-top: 50px;
+    opacity: 0;
+}
+
+/* --- Confession Page Animations --- */
+
+/* 1. Title Pop In */
+.animate-confession-pop { 
+    animation: popIn 1.5s ease-out 0.5s forwards; 
+}
+
+/* 2. Text Fade In (First Paragraph) */
+.animate-confession-fade { 
+    animation: fadeIn 2s ease-in 2.5s forwards; 
+}
+
+/* 3. Text Slide Up (Second Paragraph) */
+.animate-confession-slide { 
+    animation: slideUp 1.5s ease-out 4.5s forwards; 
+}
+
+/* 4. Typing Effect for Signature */
+.animate-confession-typing { 
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid #00bcd4;
+    width: 0;
+    animation: 
+        typing 2s steps(40, end) 6.5s forwards,
+        blink-caret 0.75s step-end infinite 8.5s;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ... (Keep all other existing animations like popIn, fadeIn, slideUp, typing, blink-caret) ... */
